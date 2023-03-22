@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Project1.Models.Enrollment>;
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Index - Enrollment List</h1>
+
+<style>
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+table,th,td{
+
+    align-content:center;
+    border: 1px solid black;
+}
+</style>
+
+<table  cellpadding="10">
+    <tr>
+        <th>Enroll ID</th>
+        <th>Email</th>
+        <th>Course ID</th>
+        <th>Enroll Date</th>
+    </tr>
+    @{
+        foreach (var enroll in Model)
+        {
+            <tr>
+                <td>@enroll.enrollmentID</td>
+                <td>@enroll.email</td>
+                <td>@enroll.courseID</td>
+                <td>@enroll.enrollDate</td>
+            </tr>
+        }
+                 //<tr> <a asp-action="Details">Details</a> </tr>
+    }
+</table>

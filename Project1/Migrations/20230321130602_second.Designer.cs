@@ -12,8 +12,8 @@ using Project1.Models;
 namespace Project1.Migrations
 {
     [DbContext(typeof(SMSDBContext))]
-    [Migration("20230320190827_first")]
-    partial class first
+    [Migration("20230321130602_second")]
+    partial class second
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,8 +44,8 @@ namespace Project1.Migrations
                     b.Property<int>("courseID")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("courseDuration")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("courseDuration")
+                        .HasColumnType("int");
 
                     b.Property<float>("courseFee")
                         .HasColumnType("real");

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project1.Models;
 
@@ -11,9 +12,11 @@ using Project1.Models;
 namespace Project1.Migrations
 {
     [DbContext(typeof(SMSDBContext))]
-    partial class SMSDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230321074701_fist")]
+    partial class fist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,8 +44,8 @@ namespace Project1.Migrations
                     b.Property<int>("courseID")
                         .HasColumnType("int");
 
-                    b.Property<int>("courseDuration")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("courseDuration")
+                        .HasColumnType("datetime2");
 
                     b.Property<float>("courseFee")
                         .HasColumnType("real");

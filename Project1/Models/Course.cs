@@ -9,7 +9,7 @@ namespace Project1.Models {
 
         [Required]
         public string courseName { get; set; }
-        public DateTime courseDuration { get; set; }
+        public int courseDuration { get; set; }
 
         [Required]
         public float courseFee { get; set; }

@@ -1,13 +1,31 @@
 using Microsoft.EntityFrameworkCore;
 using Project1.Models;
+using Project1.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IEnrollmentRepo, EnrollmentRepo>();
+
 builder.Services.AddDbContext<SMSDBContext>(option => option.UseSqlServer
                (builder.Configuration.GetConnectionString("DbCon"))
                );
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => {
+                    options.Cookie.Name = "MyCookie";
+                    options.LoginPath = "";
+                    options.SlidingExpiration = false;
+
+                });
+
 
 var app = builder.Build();
 
@@ -24,10 +42,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Enrollment}/{action=DetailsByCourse}/{id?}");
 
 app.Run();
