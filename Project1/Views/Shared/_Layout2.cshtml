@@ -72,21 +72,29 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mx-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a asp-action="index" asp-controller="home" class="nav-item nav-link">Index1</a>
-                    <a href="course.html" class="nav-item nav-link">Courses</a>
+                    <a asp-action="Index" asp-controller="Home" class="nav-item nav-link active">Home</a>
+                    <a asp-action="Details" asp-controller="Enrollment" class="nav-item nav-link"></a>
+
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                 <a href="course.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Courses</a>
                         <div class="dropdown-menu m-0">
-                            <a href="detail.html" class="dropdown-item">Course Detail</a>
-                            <a href="feature.html" class="dropdown-item">Our Features</a>
-                            <a href="team.html" class="dropdown-item">Instructors</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a asp-action="Index" asp-controller="Course" class="dropdown-item">Course Detail</a>
+                            <a asp-action="Create" asp-controller="Course" class="dropdown-item">Add Course</a>
+                            <a href="team.html" class="dropdown-item">Disable Course</a>
+                        </div>
+                    </div>
+           
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Enrollment</a>
+                        <div class="dropdown-menu m-0">
+                            <a asp-action="Details" asp-controller="Enrollment" class="dropdown-item">Enrollment Detail</a>
+                            <a asp-action="CourseList" asp-controller="Enrollment" class="dropdown-item">Detail by Course</a>
+                            <a asp-action="AddEnrollment" asp-controller="Enrollment" class="dropdown-item">Add Enrollment</a>
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-              <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a> 
+                <!--<a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a> -->
             </div>
         </nav>
     </div>

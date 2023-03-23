@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Project1.Models.Course>;
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h1 style="text-align:center">Course List</h1>
+
+<style>
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+table,th,td{
+
+    align-content:center;
+    border: 1px solid black;
+}
+
+</style>
+
+<br />
+<table  cellpadding="10">
+    <tr>
+        <th>Course Name</th>
+        <th>Course ID</th>
+       
+    </tr>
+    @{
+        foreach (var enroll in Model)
+        {
+                    <tr>
+                        <td>@enroll.courseName</td>
+                        <td>@enroll.courseID</td>
+                        <td><a asp-action="DetailsByCourse" asp-route-id=@enroll.courseID> Details </a> </td>
+                    </tr>
+        }
+       
+    }
+</table>

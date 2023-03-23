@@ -43,5 +43,12 @@ namespace Project1.Repository {
             return result;
         }
 
+        public List<Course> GetCourses()
+        {
+            var result = new List<Course>();
+            result = db.Courses.ToList();
+            return result;
+        }
+
     }
 }

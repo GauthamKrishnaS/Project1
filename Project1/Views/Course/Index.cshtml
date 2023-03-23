@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Project1.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<html>
+<body>
+    <Style>
+
+        table, th, td {
+            border: 1px solid black;
+        }
+    </Style>
+
+    <h1>List of all courses</h1>
+   <a style="display:block; text-align:center"   asp-action="Create"> Create</a>
+    <style>
+        a{
+            text-align:center;
+        }
+        table{
+            margin-left:auto;
+            margin-right:auto;
+
+        }
+    </style>
+    <table border="1">
+
+        <tbody>
+            <tr>
+                <th>CourseId</th>
+                <th>CourseName</th>
+                <th>Duration</th>
+                <th>Fees</th>
+                <th>status</th>
+            </tr>
+            @{
+                foreach (var v in Model)
+                {
+                            <tr>
+                                <td> @v.courseID </td>
+                                <td>@v.courseName</td>
+                                <td>@v.courseDuration</td>
+                                <td>@v.courseFee</td>
+                                <td>@v.status</td>
+
+
+
+                                <td><a asp-action="Edit" asp-route-id="@v.courseID">Edit</a></td>
+                                <td><a asp-action="Details" asp-route-id="@v.courseID">Details</a></td>
+                                <td><a asp-action="Delete" asp-route-id="@v.courseID">Delete</a></td>
+
+                            </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</body>
+</html>

@@ -21,7 +21,8 @@ namespace Project1.Controllers {
         public IActionResult AddEnrollment(Enrollment enrollment)
         {
             enroll.AddEnrollment(enrollment);
-            return View();
+            return RedirectToAction("Details");
+            
         }
 
         [HttpGet]
@@ -36,6 +37,10 @@ namespace Project1.Controllers {
             return View(enroll.GetEnrollmentsByCourse(id));
         }
 
-
+        [HttpGet]
+        public IActionResult CourseList()
+        {
+            return View(enroll.GetCourses());   
+        }
     }
 }

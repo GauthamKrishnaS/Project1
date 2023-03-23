@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
 <h1 style="text-align:center">Enrollment List</h1>
@@ -19,7 +18,7 @@ table,th,td{
     border: 1px solid black;
 }
 /*.link-button{
-    
+
   font: bold 14px helvatica;
   text-decoration: none;
   background-color: #0A76CA;
@@ -57,17 +56,18 @@ table,th,td{
     @{
         foreach (var enroll in Model)
         {
-            <tr>
-                <td>@enroll.enrollmentID</td>
-                <td>@enroll.email</td>
-                <td>@enroll.courseID</td>
-                <td>@enroll.enrollDate</td>
-            </tr>
+                    <tr>
+                        <td>@enroll.enrollmentID</td>
+                        <td>@enroll.email</td>
+                        <td>@enroll.courseID</td>
+                        <td>@enroll.enrollDate</td>
+                    </tr>
         }
-        //<div  style="text-align:center">
-        //    <a class="btn btn-primary py-2 px-4 d-none d-lg-block"  asp-action="AddEnrollment" >AddEnrollment</a> 
-        //    <a class="btn btn-primary py-2 px-4 d-none d-lg-block" asp-action="CourseID_input" >Details: Course ID</a> 
-        //</div>
+            <div  style="text-align:center">
+                  <!--  <a class="btn btn-primary py-2 px-4 d-none d-lg-block"  asp-action="AddEnrollment" >AddEnrollment</a> -->   
+                <a class="btn btn-primary py-2 px-4 d-none d-lg-block" asp-page="/CourseID_input">Details: Course ID</a> 
                 
+            </div>
+
     }
 </table>

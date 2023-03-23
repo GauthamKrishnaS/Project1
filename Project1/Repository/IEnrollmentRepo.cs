@@ -4,5 +4,7 @@ namespace Project1.Repository {
         public bool AddEnrollment(Enrollment enrollment);
         public List<Enrollment> GetEnrollments();
         public List<Enrollment>GetEnrollmentsByCourse(int id);
+
+        public List<Course> GetCourses();
     }
 }
