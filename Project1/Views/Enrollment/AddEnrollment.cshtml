@@ -1,0 +1,53 @@
+﻿@model Project1.Models.Enrollment
+
+@{
+    ViewData["Title"] = "AddEnrollment";
+}
+<style>
+    h1{
+        text-align: center;
+    }
+    div{
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+
+<h1>AddEnrollment</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddEnrollment">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="enrollmentID" class="control-label"></label>
+                <input asp-for="enrollmentID" class="form-control" />
+                <span asp-validation-for="enrollmentID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class ="form-control" asp-items="ViewBag.email"></input>
+            </div>
+            <div class="form-group">
+                <label asp-for="courseID" class="control-label"></label>
+                <input asp-for="courseID" class ="form-control" asp-items="ViewBag.courseID"></input>
+            </div>
+            <div class="form-group">
+                <label asp-for="enrollDate" class="control-label"></label>
+                <input asp-for="enrollDate" class="form-control" />
+                <span asp-validation-for="enrollDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Details">Back to Details</a>
+</div>
+

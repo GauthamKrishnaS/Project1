@@ -4,7 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Index - Enrollment List</h1>
+<h1 style="text-align:center">Enrollment List</h1>
 
 <style>
 
@@ -36,6 +36,7 @@ table,th,td{
                 <td>@enroll.enrollDate</td>
             </tr>
         }
-                 //<tr> <a asp-action="Details">Details</a> </tr>
+                <tr style="padding:5px"> <a asp-action="AddEnrollment">AddEnrollment</a> </tr>
+                 <tr style="padding:5px"> <a asp-action="Details">Details</a> </tr>
     }
 </table>

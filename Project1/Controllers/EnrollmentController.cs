@@ -35,5 +35,7 @@ namespace Project1.Controllers {
         {
             return View(enroll.GetEnrollmentsByCourse(id));
         }
+
+
     }
 }
