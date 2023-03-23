@@ -4,7 +4,6 @@ using Project1.Repository;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,6 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IEnrollmentRepo, EnrollmentRepo>();
+builder.Services.AddScoped<ICourseRepo, CourseRepo>();
+//builder.Services.AddScoped<IStudentRepo, StudentRepo>();
+builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 
 builder.Services.AddDbContext<SMSDBContext>(option => option.UseSqlServer
                (builder.Configuration.GetConnectionString("DbCon"))
